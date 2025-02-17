@@ -1,0 +1,160 @@
+/* Root variables for color palette (inspired by the Tartarus Dynamics logo) */
+:root {
+    --dark-bg: #1b1b1b;
+    --accent-orange: #ff5a00;
+    --accent-orange-light: #ff9f1c;
+    --accent-red: #ff1c0a;
+    --text-color: #ffffff;
+    --text-light: #cccccc;
+    --max-width: 1200px;
+    --transition-speed: 0.3s;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 50px;
+    margin-right: 0.5rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+  }
+  
+  nav ul li a:hover {
+    color: var(--accent-orange-light);
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(
+      to right,
+      var(--accent-orange) 0%,
+      var(--accent-orange-light) 100%
+    );
+    color: var(--text-color);
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-content button {
+    background-color: var(--accent-red);
+    color: var(--text-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+  }
+  
+  .hero-content button:hover {
+    background-color: var(--accent-orange);
+  }
+  
+  /* Sections */
+  section {
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-orange-light);
+  }
+  
+  /* About Us Section */
+  .about p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Product Section */
+  .product-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .product-text {
+    flex: 1 1 300px;
+  }
+  
+  .product-text ul {
+    margin-left: 1.5rem;
+    list-style: disc;
+  }
+  
+  .product-images {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .product-images img {
+    width: 100%;
+    border: 2px solid var(--accent-orange);
+    border-radius: 5px;
+  }
+  
+  /* Contact Section */
+  .contact p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #000000;
+  }
+  
+  footer p, footer small {
+    color: var(--text-light);
+  }
+  
