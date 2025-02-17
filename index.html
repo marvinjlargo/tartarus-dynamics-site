@@ -10,17 +10,20 @@
 <body>
   <!-- Header Section -->
   <header>
-    <div class="logo-container">
-      <!-- If you have a logo file, place it here. Otherwise, you can use text. -->
-      <img src="images/tartarus-logo.png" alt="Tartarus Dynamics Logo" class="logo" />
-      <h1>Tartarus Dynamics</h1>
+    <div class="header-top">
+      <div class="logo-container">
+        <img src="images/tartarus-logo.png" alt="Tartarus Dynamics Logo" class="logo" />
+        <h1>Tartarus Dynamics</h1>
+      </div>
+      <!-- Mobile Navigation Toggle Button -->
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle Navigation">☰</button>
     </div>
-    <nav>
+    <nav id="siteNav">
       <ul>
         <li><a href="#about-us">About Us</a></li>
         <li><a href="#spacepar">SpacePar</a></li>
         <li><a href="#contact">Contact</a></li>
-        <!-- Placeholder for future Spanish version -->
+        <!-- Future option for Spanish -->
         <!-- <li><a href="#" id="switch-language">Español</a></li> -->
       </ul>
     </nav>
@@ -29,8 +32,8 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h2>Empowering Farmers with Smart Technology</h2>
-      <p>Introducing <strong>SpacePar</strong>, the next-generation livestock ear tag system designed to optimize farm management and animal well-being.</p>
+      <h2>Transforming Livestock Management with Innovative Solutions</h2>
+      <p>Meet <strong>SpacePar</strong>: a revolutionary ear tag system that enhances livestock management and ensures animal well-being.</p>
       <button id="learnMoreBtn">Learn More</button>
     </div>
   </section>
@@ -39,13 +42,10 @@
   <section id="about-us" class="about">
     <h2>About Tartarus Dynamics</h2>
     <p>
-      Tartarus Dynamics LLC is a partnership founded by <strong>Rubén Alvarenga</strong>, <strong>Marvin Largo</strong>, 
-      and <strong>Reece Meakings</strong>. Based in the United States, we specialize in creating cutting-edge 
-      agricultural technology solutions that drive efficiency and innovation in the farming sector.
+      Tartarus Dynamics LLC is a visionary partnership founded by <strong>Rubén Alvarenga</strong>, <strong>Marvin Largo</strong>, and <strong>Reece Meakings</strong>. Based in the United States, we innovate cutting-edge agricultural technology solutions that drive efficiency and transform the farming sector.
     </p>
     <p>
-      Our mission is to deliver modern, reliable, and user-friendly products that help farmers and 
-      ranchers manage their livestock with ease, accuracy, and peace of mind.
+      Our mission is to deliver modern, reliable, and user-friendly products that empower farmers and ranchers to manage their livestock with unmatched ease and precision.
     </p>
   </section>
 
@@ -55,28 +55,27 @@
     <div class="product-info">
       <div class="product-text">
         <p>
-          <strong>SpacePar</strong> is a revolutionary ear tag system designed for livestock. It offers:
+          <strong>SpacePar</strong> is engineered to revolutionize livestock management by offering:
         </p>
         <ul>
-          <li>Localization function (initially based on farm antennas)</li>
-          <li>Sound alert in case the tag is lost in the field</li>
-          <li>GPS integration planned for future versions</li>
-          <li>One-year battery life, supported by mini solar cells</li>
-          <li>Animal identification with data accessible through scanning at handling facilities</li>
+          <li>Precise localization using farm antennas</li>
+          <li>Audible alerts if a tag goes missing</li>
+          <li>Future-ready GPS integration</li>
+          <li>One-year battery life enhanced by mini solar cells</li>
+          <li>Quick animal identification via scanning at handling facilities</li>
           <li>
-            Associated software with offline and online capabilities:
+            Integrated software solutions:
             <ul>
-              <li>A desktop application for offline data management</li>
-              <li>A web-based system with a cloud-synced database</li>
+              <li>Robust offline desktop application</li>
+              <li>Dynamic web-based system with seamless cloud syncing</li>
             </ul>
           </li>
         </ul>
       </div>
       <div class="product-images">
-        <!-- AI-generated images of cattle wearing ear tags can be placed here. 
-             Replace the src attributes with your actual image file names in the images folder. -->
-        <img src="images/cattle-tag1.jpg" alt="AI-generated cattle with ear tag" />
-        <img src="images/cattle-walking.jpg" alt="AI-generated cattle with ear tag" />
+        <!-- AI-generated images of cattle with ear tags -->
+        <img src="images/cattle-tag1.jpg" alt="Cattle wearing a smart ear tag" />
+        <img src="images/cattle-walking.jpg" alt="Cattle in motion with ear tag" />
       </div>
     </div>
   </section>
@@ -85,22 +84,21 @@
   <section id="contact" class="contact">
     <h2>Get in Touch</h2>
     <p>
-      Interested in learning more about our products or scheduling a demonstration? 
-      Contact us at: <strong>info@tartarusdynamics.com</strong>
+      Interested in discovering how SpacePar can transform your operations? Reach out to us at:
+      <strong>info@tartarusdynamics.com</strong>
     </p>
-
+    <!-- Optionally, you might add a call-to-action button here -->
   </section>
 
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Tartarus Dynamics. Todos los derechos reservados.</p>
-  <p>
-    <small>
-      Visita nuestro sitio web:
-      <a href="http://www.tartarusdynamics.com" target="_blank">tartarusdynamics.com</a>
-    </small>
-  </p>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Tartarus Dynamics. Todos los derechos reservados.</p>
+    <p>
+      <small>
+        Visit our website: <a href="http://www.tartarusdynamics.com" target="_blank">tartarusdynamics.com</a>
+      </small>
+    </p>
+  </footer>
 
   <!-- JavaScript -->
   <script src="js/script.js"></script>
