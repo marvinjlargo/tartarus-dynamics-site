@@ -22,189 +22,278 @@ body {
   background-color: var(--dark-bg);
   color: var(--text-color);
   line-height: 1.6;
+  overflow-x: hidden; /* Hide horizontal scrollbar if any shift occurs */
 }
 
-/* Header */
-header {
+/* Sticky Header */
+.sticky-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000; 
+  z-index: 2000;
+}
+
+.nav-container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1rem;
-}
-
-/* Flex container for logo and mobile menu toggle */
-.header-top {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-
-/* Logo Container */
-.logo-container {
-  display: flex;
   align-items: center;
+  padding: 0.75rem 1rem;
 }
 
-.logo {
-  height: 50px;
-  margin-right: 0.5rem;
-}
-
-/* Mobile Menu Toggle Button */
 .menu-toggle {
   background: none;
   border: none;
   color: var(--text-color);
   font-size: 2rem;
   cursor: pointer;
-  display: none; /* Hidden by default (shown on mobile via media query) */
+  display: none; /* shown in mobile */
 }
 
-/* Navigation Styles */
-nav {
-  margin-top: 0.5rem;
+/* Navigation - Desktop */
+.nav-right {
+  transition: transform 0.3s ease-in-out;
 }
 
-nav ul {
+.nav-right ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-nav ul li a {
+.nav-right ul li a {
   color: var(--text-color);
   text-decoration: none;
   transition: color var(--transition-speed);
+  font-weight: 500;
 }
 
-nav ul li a:hover {
+.nav-right ul li a:hover {
   color: var(--accent-orange-light);
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(to right, var(--accent-orange) 0%, var(--accent-orange-light) 100%);
+  position: relative;
+  min-height: 100vh; /* Full viewport height for a dramatic hero */
+  background: linear-gradient(to bottom, var(--accent-orange), var(--accent-orange-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 2rem;
 }
 
-.hero-content h2 {
-  font-size: 2.5rem;
+/* Subtle overlay to darken the hero background for better text contrast */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+/* Hero content layered above the overlay */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Larger logo in hero */
+.hero-logo {
+  max-width: 250px; /* Adjust as needed for best appearance */
+  height: auto;
   margin-bottom: 1rem;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-.hero-content button {
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.hero-cta {
   background-color: var(--accent-red);
   color: var(--text-color);
   border: none;
   padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color var(--transition-speed);
+  transition: background-color var(--transition-speed), transform 0.3s;
+  border-radius: 5px;
 }
 
-.hero-content button:hover {
+.hero-cta:hover {
   background-color: var(--accent-orange);
+  transform: scale(1.05);
 }
 
 /* Sections */
 section {
   max-width: var(--max-width);
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--accent-orange-light);
+  text-align: center;
 }
 
-/* About Us Section */
+/* About Section */
+.about {
+  text-align: center;
+  margin-top: 4rem; /* Extra space to clear hero if needed */
+}
 .about p {
-  margin-bottom: 1rem;
+  max-width: 700px;
+  margin: 0.5rem auto;
 }
 
 /* Product Section */
+.product {
+  background-color: #222;
+  border-top: 2px solid var(--accent-orange);
+  margin-top: 2rem;
+  padding-top: 3rem;
+}
+
 .product-info {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-text {
-  flex: 1 1 300px;
-}
-
-.product-text ul {
-  margin-left: 1.5rem;
-  list-style: disc;
+  flex: 1 1 400px;
+  max-width: 600px;
 }
 
 .product-images {
-  flex: 1 1 300px;
+  flex: 1 1 400px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-items: center;
 }
 
 .product-images img {
   width: 100%;
+  max-width: 400px;
   border: 2px solid var(--accent-orange);
   border-radius: 5px;
 }
 
 /* Contact Section */
+.contact {
+  text-align: center;
+  margin-top: 2rem;
+}
+
 .contact p {
-  margin-bottom: 1rem;
+  max-width: 700px;
+  margin: 0.5rem auto;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #000000;
+  background-color: #000;
+  margin-top: 2rem;
 }
 
 footer p, footer small {
   color: var(--text-light);
 }
 
-/* Responsive Styles */
+/* Fade-In Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile & Responsive */
 @media (max-width: 768px) {
-  /* Show the mobile menu toggle button */
   .menu-toggle {
     display: block;
   }
-  /* Hide navigation by default */
-  nav {
-    display: none;
+
+  /* Hide desktop nav by default, slide down on toggle */
+  .nav-right {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--dark-bg);
+    transform: translateY(-100%);
+    padding: 2rem 0;
+    text-align: center;
+    z-index: 1999;
   }
-  /* When nav is active, show it in a vertical list */
-  nav.active {
+  .nav-right.active {
+    transform: translateY(0);
+  }
+  .nav-right ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .nav-right ul li a {
+    font-size: 1.2rem;
     display: block;
+    padding: 0.5rem 0;
   }
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
+
+  /* Hero adjustments */
+  .hero {
+    min-height: 90vh;
   }
-  /* Stack header elements vertically */
-  .header-top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  /* Product section: stack text and images vertically */
-  .product-info {
-    flex-direction: column;
-  }
-  .hero-content h2 {
+  .hero-title {
     font-size: 2rem;
   }
-  .hero-content p {
-    font-size: 1rem;
+  .hero-subtitle {
+    font-size: 1.1rem;
   }
+  .hero-cta {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+}
+.hero-logo {
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 1rem;
+
+  /* Soften the corners */
+  border-radius: 12px;
+
+  /* Optionally, add a subtle drop shadow for depth */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

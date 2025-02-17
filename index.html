@@ -6,57 +6,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tartarus Dynamics - SpacePar</title>
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tartarus Dynamics",
+    "url": "http://www.tartarusdynamics.com",
+    "logo": "http://www.tartarusdynamics.com/images/tartarus-logo.png",
+    "description": "Tartarus Dynamics specializes in innovative agricultural technology with its flagship product, SpacePar – a smart livestock ear tag system.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@tartarusdynamics.com",
+      "contactType": "Customer Service"
+    }
+  }
+  </script>
 </head>
 <body>
-  <!-- Header Section -->
-  <header>
-    <div class="header-top">
-      <div class="logo-container">
-        <img src="images/tartarus-logo.png" alt="Tartarus Dynamics Logo" class="logo" />
-        <h1>Tartarus Dynamics</h1>
+  <!-- Sticky Navigation -->
+  <header class="sticky-header">
+    <div class="nav-container">
+      <div class="nav-left">
+        <!-- Mobile Navigation Toggle -->
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle Navigation">☰</button>
       </div>
-      <!-- Mobile Navigation Toggle Button -->
-      <button id="menuToggle" class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+      <nav id="siteNav" class="nav-right">
+        <ul>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#spacepar">SpacePar</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav id="siteNav">
-      <ul>
-        <li><a href="#about-us">About Us</a></li>
-        <li><a href="#spacepar">SpacePar</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <!-- Future option for Spanish -->
-        <!-- <li><a href="#" id="switch-language">Español</a></li> -->
-      </ul>
-    </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section: Centered Logo + Tagline -->
   <section class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h2>Transforming Livestock Management with Innovative Solutions</h2>
-      <p>Meet <strong>SpacePar</strong>: a revolutionary ear tag system that enhances livestock management and ensures animal well-being.</p>
-      <button id="learnMoreBtn">Learn More</button>
+      <!-- Large Logo -->
+      <img 
+        src="images/tartarus-logo.png" 
+        alt="Tartarus Dynamics Logo" 
+        class="hero-logo"
+      />
+      <h2 class="hero-title">Revolutionize Your Livestock Management</h2>
+      <p class="hero-subtitle">
+        Discover <strong>SpacePar</strong> – a smart, reliable ear tag system designed 
+        to maximize efficiency and ensure animal well-being.
+      </p>
+      <button id="learnMoreBtn" class="hero-cta">Learn More</button>
     </div>
   </section>
 
   <!-- About Us Section -->
-  <section id="about-us" class="about">
+  <section id="about-us" class="about fade-in">
     <h2>About Tartarus Dynamics</h2>
     <p>
-      Tartarus Dynamics LLC is a visionary partnership founded by <strong>Rubén Alvarenga</strong>, <strong>Marvin Largo</strong>, and <strong>Reece Meakings</strong>. Based in the United States, we innovate cutting-edge agricultural technology solutions that drive efficiency and transform the farming sector.
+      Tartarus Dynamics LLC is a visionary partnership founded by 
+      <strong>Rubén Alvarenga</strong>, <strong>Marvin Largo</strong>, and <strong>Reece Meakings</strong>. 
+      We create cutting-edge agricultural technology solutions that drive efficiency 
+      and transform the farming sector.
     </p>
     <p>
-      Our mission is to deliver modern, reliable, and user-friendly products that empower farmers and ranchers to manage their livestock with unmatched ease and precision.
+      Our mission is to empower farmers and ranchers with modern, reliable, and 
+      user-friendly tools for superior livestock management.
     </p>
   </section>
 
   <!-- SpacePar Product Section -->
-  <section id="spacepar" class="product">
+  <section id="spacepar" class="product fade-in">
     <h2>SpacePar: Smart Livestock Ear Tag</h2>
     <div class="product-info">
       <div class="product-text">
-        <p>
-          <strong>SpacePar</strong> is engineered to revolutionize livestock management by offering:
-        </p>
+        <p><strong>SpacePar</strong> is engineered to revolutionize livestock management by offering:</p>
         <ul>
           <li>Precise localization using farm antennas</li>
           <li>Audible alerts if a tag goes missing</li>
@@ -73,21 +98,27 @@
         </ul>
       </div>
       <div class="product-images">
-        <!-- AI-generated images of cattle with ear tags -->
-        <img src="images/cattle-tag1.jpg" alt="Cattle wearing a smart ear tag" />
-        <img src="images/cattle-walking.jpg" alt="Cattle in motion with ear tag" />
+        <img 
+          src="images/cattle-tag1.jpg" 
+          alt="Cattle wearing a smart ear tag" 
+          loading="lazy" 
+        />
+        <img 
+          src="images/cattle-walking.jpg" 
+          alt="Cattle in motion with ear tag" 
+          loading="lazy" 
+        />
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact">
+  <section id="contact" class="contact fade-in">
     <h2>Get in Touch</h2>
     <p>
-      Interested in discovering how SpacePar can transform your operations? Reach out to us at:
-      <strong>info@tartarusdynamics.com</strong>
+      Interested in discovering how SpacePar can transform your operations? 
+      Reach out at: <strong>info@tartarusdynamics.com</strong>
     </p>
-    <!-- Optionally, you might add a call-to-action button here -->
   </section>
 
   <!-- Footer -->
@@ -95,7 +126,8 @@
     <p>&copy; 2025 Tartarus Dynamics. Todos los derechos reservados.</p>
     <p>
       <small>
-        Visit our website: <a href="http://www.tartarusdynamics.com" target="_blank">tartarusdynamics.com</a>
+        Visit our website: 
+        <a href="http://www.tartarusdynamics.com" target="_blank">tartarusdynamics.com</a>
       </small>
     </p>
   </footer>
