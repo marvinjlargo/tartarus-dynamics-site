@@ -28,7 +28,6 @@
   box-sizing: border-box;
 }
 
-/* Updated default font-family */
 body {
   background-color: var(--dark-bg);
   color: var(--text-color);
@@ -348,9 +347,14 @@ footer small {
     padding: 0.5rem 0;
   }
 
-  /* Hero adjustments */
+  /* Hero adjustments to prevent the logo from being cut */
   .hero {
     min-height: 90vh;
+    padding-top: 80px; /* Adds spacing so the fixed header doesn’t overlap */
+  }
+  
+  .hero-logo {
+    max-width: 150px; /* Reduce logo size on mobile */
   }
   
   .hero-title {
