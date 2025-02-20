@@ -1,3 +1,6 @@
+/* Importing Google Fonts for improved typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
 /* Root variables for color palette */
 :root {
   --dark-bg: #1b1b1b;
@@ -8,6 +11,14 @@
   --text-light: #cccccc;
   --max-width: 1200px;
   --transition-speed: 0.3s;
+
+  /* Additional gradient reference for new branding feel */
+  --gradient-start: #00b4d8;
+  --gradient-end: #48cae4;
+
+  /* New typography variables */
+  --heading-font: 'Poppins', sans-serif;
+  --body-font: 'Roboto', sans-serif;
 }
 
 /* Global Styles */
@@ -15,14 +26,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Updated default font-family */
 body {
   background-color: var(--dark-bg);
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
+  font-family: var(--body-font);
+}
+
+/* Headings use a modern sans-serif font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+}
+
+/* Smooth scrolling for a more polished user experience */
+html {
+  scroll-behavior: smooth;
 }
 
 /* Sticky Header */
@@ -33,6 +56,7 @@ body {
   left: 0;
   background-color: #000;
   z-index: 2000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
 }
 
 .nav-container {
@@ -55,7 +79,7 @@ body {
 
 /* Navigation - Desktop */
 .nav-right {
-  transition: transform 0.3s ease-in-out;
+  transition: transform var(--transition-speed) ease-in-out;
 }
 
 .nav-right ul {
@@ -69,17 +93,31 @@ body {
   text-decoration: none;
   transition: color var(--transition-speed);
   font-weight: 500;
+  position: relative;
 }
 
-.nav-right ul li a:hover {
-  color: var(--accent-blue-light);
+.nav-right ul li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-blue-light);
+  transition: width var(--transition-speed);
+}
+
+.nav-right ul li a:hover::after {
+  width: 100%;
 }
 
 /* Hero Section */
 .hero {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(to bottom, var(--accent-blue), var(--accent-blue-light));
+  /* Updated gradient for a fresh brand feel */
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)) no-repeat center center / cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,9 +142,21 @@ body {
   z-index: 2;
   max-width: 800px;
   margin: auto;
+  animation: fadeSlideIn 1s ease forwards;
+  opacity: 0; /* Start hidden, fade in */
 }
 
-/* Logo */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-logo {
   max-width: 250px;
   height: auto;
@@ -116,10 +166,11 @@ body {
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem; /* Slightly bigger for stronger impact */
   margin-bottom: 1rem;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  letter-spacing: 1px; /* Subtle spacing for modern look */
 }
 
 .hero-subtitle {
@@ -127,6 +178,7 @@ body {
   margin-bottom: 2rem;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  font-weight: 400;
 }
 
 .hero-cta {
@@ -136,8 +188,9 @@ body {
   padding: 0.75rem 1.5rem;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color var(--transition-speed), transform 0.3s;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
   border-radius: 5px;
+  font-family: var(--heading-font); /* Make CTA stand out with heading font */
 }
 
 .hero-cta:hover {
@@ -157,6 +210,7 @@ section h2 {
   margin-bottom: 1rem;
   color: var(--accent-blue-light);
   text-align: center;
+  letter-spacing: 0.5px; /* Slightly refined spacing */
 }
 
 /* About Section */
@@ -168,6 +222,9 @@ section h2 {
 .about p {
   max-width: 700px;
   margin: 0.5rem auto;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-light);
 }
 
 /* Product Section */
@@ -191,6 +248,11 @@ section h2 {
   max-width: 600px;
 }
 
+.product-text p {
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
 .product-images {
   flex: 1 1 400px;
   display: flex;
@@ -204,6 +266,11 @@ section h2 {
   max-width: 400px;
   border: 2px solid var(--accent-blue);
   border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.product-images img:hover {
+  transform: scale(1.03); /* Subtle hover zoom for engagement */
 }
 
 /* Contact Section */
@@ -215,6 +282,8 @@ section h2 {
 .contact p {
   max-width: 700px;
   margin: 0.5rem auto;
+  color: var(--text-light);
+  line-height: 1.7;
 }
 
 /* Footer */
@@ -225,7 +294,8 @@ footer {
   margin-top: 2rem;
 }
 
-footer p, footer small {
+footer p,
+footer small {
   color: var(--text-light);
 }
 
@@ -260,7 +330,7 @@ footer p, footer small {
     padding: 2rem 0;
     text-align: center;
     z-index: 1999;
-    transition: transform 0.3s ease-in-out;
+    transition: transform var(--transition-speed) ease-in-out;
   }
   
   .nav-right.active {
