@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Smooth scroll to SpacePar product section on "Learn More" button click
   learnMoreBtn.addEventListener("click", () => {
-    const productSection = document.getElementById("spacepar");
+    const productSection = document.getElementById("Ñutag");
     productSection.scrollIntoView({ behavior: "smooth" });
   });
 
