@@ -1,24 +1,38 @@
+<!-- 
+  Tartarus Dynamics Website
+  Author: Tartarus Dynamics Team
+  Description: Main landing page showcasing Ñutag smart livestock ear tag system
+  Version: 1.0.0
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Character encoding and viewport settings -->
   <meta charset="UTF-8" />
-  <meta name="description" content="Tartarus Dynamics - Revolutionizing livestock management with Ñutag smart ear tags. Led by experienced founders Reece Meakings, Marvin Largo, and Rubén Alvarenga." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta tags -->
+  <meta name="description" content="Tartarus Dynamics - Revolutionizing livestock management with Ñutag smart ear tags. Led by experienced founders Reece Meakings, Marvin Largo, and Rubén Alvarenga." />
   <meta name="keywords" content="Tartarus Dynamics, Ñutag, smart livestock ear tags, IoT agriculture, livestock management, agritech" />
   <meta name="author" content="Tartarus Dynamics" />
+  
+  <!-- Open Graph tags for social media sharing -->
   <meta property="og:title" content="Tartarus Dynamics - Smart Livestock Management" />
   <meta property="og:description" content="Revolutionizing livestock management with Ñutag smart ear tags. Discover our innovative solution for modern farming." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tartarusdynamics.com" />
   <meta property="og:image" content="https://tartarusdynamics.com/images/tartarus-logo.png" />
+  
   <title>Tartarus Dynamics - Smart Livestock Management | Ñutag</title>
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.png?v=2" type="image/png" />
 
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- JSON-LD Structured Data for SEO -->
+  <!-- JSON-LD Structured Data for SEO and Rich Snippets -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -95,33 +109,34 @@
   </script>
 </head>
 <body>
-
-  <!-- Sticky Navigation -->
+  <!-- Sticky Navigation Header -->
   <header class="sticky-header">
     <div class="nav-container">
+      <!-- Left side of navigation (Logo and mobile menu toggle) -->
       <div class="nav-left">
         <a href="#" class="logo-link">
           <img src="images/tartarus-logo.png" alt="Tartarus Dynamics Logo" class="nav-logo" />
         </a>
-        <!-- Mobile Navigation Toggle -->
+        <!-- Mobile Navigation Toggle Button -->
         <button id="menuToggle" class="menu-toggle" aria-label="Toggle Navigation">☰</button>
       </div>
+      <!-- Main Navigation Menu -->
       <nav id="siteNav" class="nav-right">
         <ul>
           <li><a href="#about-us">About Us</a></li>
           <li><a href="#founders">Founders</a></li>
-          <li><a href="#Ñutag">Ñutag</a></li>
+          <li><a href="#nutag">Ñutag</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section: Centered Logo + Tagline -->
+  <!-- Hero Section with Main Value Proposition -->
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <!-- Large Logo -->
+      <!-- Large centered logo -->
       <img 
         src="images/tartarus-logo.png" 
         alt="Tartarus Dynamics Logo" 
@@ -151,9 +166,10 @@
     </p>
   </section>
 
-  <!-- Founders Section -->
+  <!-- Founders Section with Interactive Tabs -->
   <section id="founders" class="founders fade-in">
     <h2>Meet Our Founders</h2>
+    <!-- Tab Navigation -->
     <div class="tabs-container">
       <div class="tabs">
         <button class="tab-btn active" data-founder="reece">Reece Meakings</button>
@@ -161,6 +177,7 @@
         <button class="tab-btn" data-founder="ruben">Rubén Alvarenga</button>
       </div>
       
+      <!-- Reece's Profile Tab -->
       <div class="tab-content active" id="reece">
         <div class="founder-card">
           <div class="founder-info">
@@ -211,6 +228,7 @@
         </div>
       </div>
 
+      <!-- Marvin's Profile Tab -->
       <div class="tab-content" id="marvin">
         <div class="founder-card">
           <div class="founder-info">
@@ -262,6 +280,7 @@
         </div>
       </div>
 
+      <!-- Rubén's Profile Tab -->
       <div class="tab-content" id="ruben">
         <div class="founder-card">
           <div class="founder-info">
@@ -321,9 +340,10 @@
     </p>
 
     <div class="nutag-content">
-      <!-- Left Column: Features -->
+      <!-- Left Column: Features Grid -->
       <div class="nutag-features">
         <div class="feature-grid">
+          <!-- Feature Items -->
           <div class="feature-item">
             <div class="feature-icon">📍</div>
             <h4>Precise Localization</h4>
@@ -365,13 +385,15 @@
           </div>
         </div>
 
+        <!-- Call to Action Button -->
         <div class="nutag-cta">
           <a href="#contact" class="cta-button">Request a Demo</a>
         </div>
       </div>
 
-      <!-- Right Column: Images -->
+      <!-- Right Column: Product Images -->
       <div class="nutag-images">
+        <!-- Product Image 1 -->
         <div class="image-container">
           <img 
             src="images/cattle-tag1.jpg" 
@@ -379,6 +401,7 @@
             loading="lazy"
           />
         </div>
+        <!-- Product Image 2 -->
         <div class="image-container">
           <img 
             src="images/cattle-walking.jpg" 
@@ -402,6 +425,7 @@
   <!-- Footer -->
   <footer>
     <div class="footer-content">
+      <!-- Footer Links -->
       <div class="footer-links">
         <a href="#privacy" class="footer-link">Privacy Policy</a>
         <span class="footer-separator">|</span>

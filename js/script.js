@@ -1,143 +1,156 @@
-// script.js
+/**
+ * Tartarus Dynamics Website JavaScript
+ * Author: Tartarus Dynamics Team
+ * Version: 1.0.0
+ * Description: Handles all interactive functionality for the Tartarus Dynamics website
+ */
 
-document.addEventListener("DOMContentLoaded", () => {
-  const learnMoreBtn = document.getElementById("learnMoreBtn");
-  const menuToggle = document.getElementById("menuToggle");
-  const siteNav = document.getElementById("siteNav");
-  const body = document.body;
+// Wait for DOM to be fully loaded before initializing
+document.addEventListener('DOMContentLoaded', () => {
+  initializeNavigation();
+  initializeTabNavigation();
+  initializeSmoothScroll();
+  initializeFadeInAnimations();
+});
 
-  // Smooth scroll to SpacePar product section on "Learn More" button click
-  learnMoreBtn.addEventListener("click", () => {
-    const productSection = document.getElementById("Ñutag");
-    productSection.scrollIntoView({ behavior: "smooth" });
-  });
-
-  // Toggle mobile navigation menu with slide animation
-  menuToggle.addEventListener("click", () => {
-    siteNav.classList.toggle("active");
-    body.classList.toggle("menu-open");
+/**
+ * Mobile Navigation Functionality
+ * Handles the mobile menu toggle and accessibility
+ */
+function initializeNavigation() {
+  const menuToggle = document.getElementById('menuToggle');
+  const siteNav = document.getElementById('siteNav');
+  
+  // Toggle mobile menu
+  menuToggle?.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    siteNav.classList.toggle('active');
     
     // Update ARIA attributes
-    const isExpanded = siteNav.classList.contains('active');
-    menuToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-  });
-
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (siteNav.classList.contains('active') && 
-        !siteNav.contains(e.target) && 
-        !menuToggle.contains(e.target)) {
-      siteNav.classList.remove('active');
-      body.classList.remove('menu-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+    if (!isExpanded) {
+      menuToggle.setAttribute('aria-label', 'Close Navigation');
+    } else {
+      menuToggle.setAttribute('aria-label', 'Open Navigation');
     }
   });
 
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        // Close mobile menu if open
-        siteNav.classList.remove('active');
-        body.classList.remove('menu-open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-
-        // Smooth scroll to target
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!siteNav.contains(e.target) && !menuToggle.contains(e.target)) {
+      siteNav.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open Navigation');
+    }
   });
+}
 
-  // Intersection Observer for fade-in animations
-  const fadeElements = document.querySelectorAll('.fade-in');
-  const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        fadeObserver.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: '50px'
-  });
-
-  fadeElements.forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(20px)';
-    element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    fadeObserver.observe(element);
-  });
-
-  // Tab Navigation for Founders Section
+/**
+ * Founders Tab Navigation
+ * Handles the interactive tabs in the founders section
+ */
+function initializeTabNavigation() {
   const tabButtons = document.querySelectorAll('.tab-btn');
   const tabContents = document.querySelectorAll('.tab-content');
 
   tabButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const founder = button.getAttribute('data-founder');
-      
-      // Update active states
+      // Remove active class from all buttons and contents
       tabButtons.forEach(btn => btn.classList.remove('active'));
       tabContents.forEach(content => content.classList.remove('active'));
-      
+
+      // Add active class to clicked button and corresponding content
       button.classList.add('active');
-      document.getElementById(founder)?.classList.add('active');
+      const targetId = button.getAttribute('data-founder');
+      document.getElementById(targetId)?.classList.add('active');
     });
-  });
 
-  // Handle keyboard navigation for tabs
-  tabButtons.forEach((button, index) => {
+    // Add keyboard navigation
     button.addEventListener('keydown', (e) => {
-      let targetButton = null;
-
-      switch(e.key) {
-        case 'ArrowLeft':
-          targetButton = tabButtons[index - 1] || tabButtons[tabButtons.length - 1];
-          break;
-        case 'ArrowRight':
-          targetButton = tabButtons[index + 1] || tabButtons[0];
-          break;
-      }
-
-      if (targetButton) {
+      if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        targetButton.click();
-        targetButton.focus();
+        button.click();
       }
     });
   });
+}
 
-  // Add ARIA labels and roles
-  const addAccessibilityAttributes = () => {
-    // Navigation
-    const nav = document.querySelector('nav');
-    nav?.setAttribute('role', 'navigation');
-    nav?.setAttribute('aria-label', 'Main navigation');
+/**
+ * Smooth Scrolling
+ * Enables smooth scrolling for anchor links
+ */
+function initializeSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = anchor.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
 
-    // Tabs
-    const tabList = document.querySelector('.tabs');
-    tabList?.setAttribute('role', 'tablist');
-    
-    tabButtons.forEach(button => {
-      button.setAttribute('role', 'tab');
-      button.setAttribute('aria-selected', button.classList.contains('active').toString());
+      if (targetElement) {
+        // Calculate offset for fixed header
+        const headerHeight = document.querySelector('.sticky-header')?.offsetHeight || 0;
+        const targetPosition = targetElement.offsetTop - headerHeight;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+
+        // Update URL without scrolling
+        history.pushState(null, '', targetId);
+      }
     });
+  });
+}
 
-    tabContents.forEach(content => {
-      content.setAttribute('role', 'tabpanel');
-      content.setAttribute('aria-hidden', (!content.classList.contains('active')).toString());
+/**
+ * Fade-In Animations
+ * Handles the fade-in animations for sections as they become visible
+ */
+function initializeFadeInAnimations() {
+  const fadeElements = document.querySelectorAll('.fade-in');
+  
+  // Create Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Stop observing after animation
+        observer.unobserve(entry.target);
+      }
     });
-  };
+  }, {
+    threshold: 0.1, // Trigger when 10% of element is visible
+    rootMargin: '0px 0px -50px 0px' // Slight offset for better timing
+  });
 
-  addAccessibilityAttributes();
-});
+  // Start observing fade-in elements
+  fadeElements.forEach(element => observer.observe(element));
+}
+
+/**
+ * Add ARIA Labels
+ * Enhances accessibility by adding ARIA labels to interactive elements
+ */
+function addAriaLabels() {
+  // Add ARIA labels to navigation
+  const nav = document.getElementById('siteNav');
+  nav?.setAttribute('aria-label', 'Main navigation');
+
+  // Add ARIA labels to sections
+  document.querySelectorAll('section').forEach(section => {
+    const headingText = section.querySelector('h2')?.textContent;
+    if (headingText) {
+      section.setAttribute('aria-label', headingText);
+    }
+  });
+
+  // Add ARIA labels to tabs
+  const tabList = document.querySelector('.tabs');
+  tabList?.setAttribute('role', 'tablist');
+  
+  document.querySelectorAll('.tab-btn').forEach(tab => {
+    tab.setAttribute('role', 'tab');
+    tab.setAttribute('aria-selected', tab.classList.contains('active'));
+  });
+}
