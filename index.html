@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Tartarus Dynamics - Smart Livestock Ear Tags (Ñutag)" />
+  <meta name="description" content="Tartarus Dynamics - Revolutionizing livestock management with Ñutag smart ear tags. Led by experienced founders Reece Meakings, Marvin Largo, and Rubén Alvarenga." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tartarus Dynamics - Ñutag</title>
+  <meta name="keywords" content="Tartarus Dynamics, Ñutag, smart livestock ear tags, IoT agriculture, livestock management, agritech" />
+  <meta name="author" content="Tartarus Dynamics" />
+  <meta property="og:title" content="Tartarus Dynamics - Smart Livestock Management" />
+  <meta property="og:description" content="Revolutionizing livestock management with Ñutag smart ear tags. Discover our innovative solution for modern farming." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tartarusdynamics.com" />
+  <meta property="og:image" content="https://tartarusdynamics.com/images/tartarus-logo.png" />
+  <title>Tartarus Dynamics - Smart Livestock Management | Ñutag</title>
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.png?v=2" type="image/png" />
@@ -17,9 +24,68 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Tartarus Dynamics",
-    "url": "http://www.tartarusdynamics.com",
-    "logo": "http://www.tartarusdynamics.com/images/tartarus-logo.png",
+    "url": "https://www.tartarusdynamics.com",
+    "logo": "https://www.tartarusdynamics.com/images/tartarus-logo.png",
     "description": "Tartarus Dynamics specializes in innovative agricultural technology with its flagship product, Ñutag – a smart livestock ear tag system.",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Reece Meakings",
+        "jobTitle": "CTO & Co-founder",
+        "description": "DevOps leader and technical innovator specializing in cloud infrastructure, systems integration, and AI implementation. Former team lead with proven success in healthcare and energy sectors.",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Mohawk College",
+          "location": "Ontario",
+          "degree": "Advanced Diploma in Network Engineering and Security Analysis"
+        },
+        "knowsAbout": [
+          "DevOps Architecture",
+          "Cloud Infrastructure",
+          "Systems Integration",
+          "AI/ML Implementation",
+          "Security Analysis"
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Marvin J. Largo",
+        "jobTitle": "COO & Co-founder",
+        "description": "Civil engineer and operations leader specializing in project management, construction estimation, and supply chain optimization. Proven success managing multi-million dollar projects and complex logistics operations.",
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Universidad Cooperativa",
+            "location": "Colombia",
+            "degree": "Bachelor of Science in Civil Engineering"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Mohawk College",
+            "location": "Ontario",
+            "degree": "Graduate Certificate in Supply Chain Management"
+          }
+        ],
+        "knowsAbout": [
+          "Construction Management",
+          "Project Estimation",
+          "Supply Chain Optimization",
+          "AutoCAD Design",
+          "Quality Control Systems"
+        ],
+        "knowsLanguage": [
+          "English",
+          "Spanish",
+          "French"
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Rubén Alvarenga",
+        "jobTitle": "CEO & Co-founder",
+        "description": "Strategic lead with expertise in agritech business development"
+      }
+    ],
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "info@tartarusdynamics.com",
@@ -34,12 +100,16 @@
   <header class="sticky-header">
     <div class="nav-container">
       <div class="nav-left">
+        <a href="#" class="logo-link">
+          <img src="images/tartarus-logo.png" alt="Tartarus Dynamics Logo" class="nav-logo" />
+        </a>
         <!-- Mobile Navigation Toggle -->
         <button id="menuToggle" class="menu-toggle" aria-label="Toggle Navigation">☰</button>
       </div>
       <nav id="siteNav" class="nav-right">
         <ul>
           <li><a href="#about-us">About Us</a></li>
+          <li><a href="#founders">Founders</a></li>
           <li><a href="#Ñutag">Ñutag</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -62,7 +132,7 @@
         Discover <strong>Ñutag</strong> – a smart, reliable ear tag system designed 
         to maximize efficiency and ensure animal well-being.
       </p>
-      <button id="learnMoreBtn" class="hero-cta">Learn More</button>
+      <a href="#nutag" id="learnMoreBtn" class="hero-cta">Learn More</a>
     </div>
   </section>
 
@@ -81,38 +151,241 @@
     </p>
   </section>
 
-  <!-- Ñutag Product Section -->
-  <section id="Ñutag" class="product fade-in">
-    <h2>Ñutag: Smart Livestock Ear Tag</h2>
-    <div class="product-info">
-      <div class="product-text">
-        <p><strong>Ñutag</strong> is engineered to revolutionize livestock management by offering:</p>
-        <ul>
-          <li>Precise localization using farm antennas</li>
-          <li>Audible alerts if a tag goes missing</li>
-          <li>Future-ready GPS integration</li>
-          <li>One-year battery life enhanced by mini solar cells</li>
-          <li>Quick animal identification via scanning at handling facilities</li>
-          <li>
-            Integrated software solutions:
-            <ul>
-              <li>Robust offline desktop application</li>
-              <li>Dynamic web-based system with seamless cloud syncing</li>
-            </ul>
-          </li>
-        </ul>
+  <!-- Founders Section -->
+  <section id="founders" class="founders fade-in">
+    <h2>Meet Our Founders</h2>
+    <div class="tabs-container">
+      <div class="tabs">
+        <button class="tab-btn active" data-founder="reece">Reece Meakings</button>
+        <button class="tab-btn" data-founder="marvin">Marvin Largo</button>
+        <button class="tab-btn" data-founder="ruben">Rubén Alvarenga</button>
       </div>
-      <div class="product-images">
-        <img 
-          src="images/cattle-tag1.jpg" 
-          alt="Cattle wearing a smart ear tag" 
-          loading="lazy" 
-        />
-        <img 
-          src="images/cattle-walking.jpg" 
-          alt="Cattle in motion with ear tag" 
-          loading="lazy" 
-        />
+      
+      <div class="tab-content active" id="reece">
+        <div class="founder-card">
+          <div class="founder-info">
+            <h3>Reece Meakings</h3>
+            <h4>CTO & Co-founder</h4>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/reece-meakings-ai/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                Connect on LinkedIn
+              </a>
+            </div>
+            <div class="expertise">
+              <h5>Technical Leadership</h5>
+              <ul>
+                <li>DevOps Architecture & Strategy</li>
+                <li>Cloud Infrastructure Management</li>
+                <li>Systems Integration & Security</li>
+                <li>AI/ML Implementation</li>
+              </ul>
+            </div>
+            <div class="contribution">
+              <h5>Innovation & Impact</h5>
+              <p>
+                As CTO, Reece brings extensive DevOps leadership experience to Tartarus Dynamics, 
+                having previously led teams of 15+ developers and achieved remarkable efficiency improvements 
+                in healthcare and energy sectors. His proven track record includes reducing deployment times 
+                from hours to minutes and implementing robust cloud infrastructure solutions.
+              </p>
+            </div>
+            <div class="background">
+              <h5>Technical Excellence</h5>
+              <ul>
+                <li>Advanced cloud infrastructure management across AWS, Azure, and Google Cloud</li>
+                <li>Expert in CI/CD pipelines and Infrastructure as Code (Terraform, CDK)</li>
+                <li>Co-creator of AI-driven software with 25,000+ active users</li>
+                <li>Network Engineering and Security Analysis honors graduate</li>
+              </ul>
+            </div>
+            <div class="leadership">
+              <h5>Vision & Expertise</h5>
+              <p>
+                Combining deep technical knowledge with strategic leadership, Reece architects Tartarus Dynamics' 
+                technological infrastructure. His experience in healthcare compliance and mission-critical systems 
+                ensures our agricultural solutions meet the highest standards of reliability and security. His innovative 
+                approach to AI integration and system optimization drives our commitment to cutting-edge agricultural technology.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="marvin">
+        <div class="founder-card">
+          <div class="founder-info">
+            <h3>Marvin J. Largo</h3>
+            <h4>COO & Co-founder</h4>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/marvinjlargo/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                Connect on LinkedIn
+              </a>
+            </div>
+            <div class="expertise">
+              <h5>Technical Leadership</h5>
+              <ul>
+                <li>Construction & Project Management</li>
+                <li>Supply Chain Optimization</li>
+                <li>Engineering Design & Estimation</li>
+                <li>Quality Control Systems</li>
+              </ul>
+            </div>
+            <div class="contribution">
+              <h5>Innovation & Impact</h5>
+              <p>
+                As COO, Marvin leverages his extensive civil engineering background to drive operational excellence 
+                at Tartarus Dynamics. His proven track record includes managing projects valued at $50+ million and 
+                coordinating complex logistics for over 1,000,000 square feet of construction materials. This expertise 
+                in precision planning and quality control ensures the robust development of our agricultural technology solutions.
+              </p>
+            </div>
+            <div class="background">
+              <h5>Professional Excellence</h5>
+              <ul>
+                <li>Civil Engineering degree with focus on construction and project management</li>
+                <li>Google Project Management certification</li>
+                <li>Graduate Certificate in Supply Chain Management</li>
+                <li>Expert in AutoCAD, SAP, and advanced project estimation tools</li>
+              </ul>
+            </div>
+            <div class="leadership">
+              <h5>Vision & Global Perspective</h5>
+              <p>
+                Combining technical precision with strategic oversight, Marvin brings multilingual capabilities 
+                (English, Spanish, French) and international experience to our operations. His comprehensive 
+                understanding of quality standards and regulatory compliance strengthens our commitment to excellence. 
+                This blend of technical expertise and strategic planning drives our mission to deliver reliable, 
+                scalable agricultural solutions worldwide.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="ruben">
+        <div class="founder-card">
+          <div class="founder-info">
+            <h3>Rubén Alvarenga</h3>
+            <h4>CEO & Co-founder</h4>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/rubalva/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                Connect on LinkedIn
+              </a>
+            </div>
+            <div class="expertise">
+              <h5>Expertise</h5>
+              <ul>
+                <li>Aerospace Engineering & Technical Innovation</li>
+                <li>International Business Development</li>
+                <li>Programming & System Architecture</li>
+                <li>Cross-Cultural Communication</li>
+              </ul>
+            </div>
+            <div class="contribution">
+              <h5>Contribution</h5>
+              <p>
+                As CEO, Rubén combines his aerospace engineering background with business acumen to drive Tartarus Dynamics' 
+                strategic vision. His expertise in complex systems and international markets uniquely positions him to lead 
+                our expansion across diverse agricultural sectors.
+              </p>
+            </div>
+            <div class="background">
+              <h5>Technical Excellence</h5>
+              <ul>
+                <li>Aerospace Engineer, National Cheng Kung University (Taiwan)</li>
+                <li>First Place, Kibo Programming Challenge (Taiwan)</li>
+                <li>Third Place Worldwide & Second Place in subsequent programming competitions</li>
+                <li>Advanced proficiency in Python, C++, and C programming languages</li>
+              </ul>
+            </div>
+            <div class="leadership">
+              <h5>Leadership & Global Perspective</h5>
+              <p>
+                A natural innovator who founded an astronomy club and actively supports war veterans, Rubén brings 
+                a unique global perspective through his multilingual capabilities (Spanish, Portuguese, Guarani, English, 
+                and Chinese) and international experience. His combination of technical expertise and cross-cultural 
+                understanding drives our mission to revolutionize livestock management worldwide.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ñutag Product Section -->
+  <section id="nutag" class="product fade-in">
+    <h2>Ñutag: Smart Livestock Ear Tag</h2>
+    <p class="product-tagline">
+      Next-generation ear tag system designed to revolutionize livestock management
+    </p>
+
+    <div class="nutag-content">
+      <!-- Left Column: Features -->
+      <div class="nutag-features">
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-icon">📍</div>
+            <h4>Precise Localization</h4>
+            <p>Real-time tracking using strategically placed farm antennas</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">🔔</div>
+            <h4>Audible Alerts</h4>
+            <p>Instant notifications when a tag goes missing</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">🛰️</div>
+            <h4>Future-Ready GPS</h4>
+            <p>Built-in capability for GPS-based tracking integration</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">🔋</div>
+            <h4>One-Year Battery Life</h4>
+            <p>Sustainable power through integrated mini solar cells</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">🔍</div>
+            <h4>Quick Identification</h4>
+            <p>Instant scanning at handling facilities for efficient management</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">💻</div>
+            <h4>Complete Software Suite</h4>
+            <p>Comprehensive management tools:</p>
+            <ul class="feature-list">
+              <li>Powerful offline desktop application</li>
+              <li>Cloud-synced web platform</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="nutag-cta">
+          <a href="#contact" class="cta-button">Request a Demo</a>
+        </div>
+      </div>
+
+      <!-- Right Column: Images -->
+      <div class="nutag-images">
+        <div class="image-container">
+          <img 
+            src="images/cattle-tag1.jpg" 
+            alt="Cattle wearing a smart ear tag"
+            loading="lazy"
+          />
+        </div>
+        <div class="image-container">
+          <img 
+            src="images/cattle-walking.jpg" 
+            alt="Cattle in motion with ear tag"
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -128,13 +401,16 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Tartarus Dynamics. Todos los derechos reservados.</p>
-    <p>
-      <small>
-        Visit our website: 
-        <a href="http://www.tartarusdynamics.com" target="_blank">tartarusdynamics.com</a>
-      </small>
-    </p>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#privacy" class="footer-link">Privacy Policy</a>
+        <span class="footer-separator">|</span>
+        <a href="#terms" class="footer-link">Terms of Service</a>
+        <span class="footer-separator">|</span>
+        <a href="#contact" class="footer-link">Contact</a>
+      </div>
+      <p class="copyright">&copy; 2025 Tartarus Dynamics. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
   <!-- JavaScript -->
