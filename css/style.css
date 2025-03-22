@@ -1013,3 +1013,202 @@ footer {
     max-width: 250px;
   }
 }
+
+/* Language Switcher */
+.language-switcher {
+  margin-right: 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.language-btn {
+  background: rgba(0, 168, 232, 0.08);
+  border: 1px solid rgba(0, 168, 232, 0.3);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-family: var(--heading-font);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  position: relative;
+  overflow: hidden;
+  height: 36px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.language-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(0, 168, 232, 0.2),
+    rgba(0, 232, 232, 0.2)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  border-radius: var(--radius-md);
+}
+
+.language-btn::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, 
+    var(--accent-blue),
+    var(--accent-cyan)
+  );
+  border-radius: calc(var(--radius-md) + 2px);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.language-btn > * {
+  position: relative;
+  z-index: 2;
+}
+
+.language-btn:hover {
+  transform: translateY(-1px);
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(0, 168, 232, 0.15);
+}
+
+.language-btn:hover::before {
+  opacity: 1;
+}
+
+.language-btn:hover::after {
+  opacity: 0.3;
+}
+
+.language-btn.es-active {
+  background: linear-gradient(135deg,
+    rgba(0, 168, 232, 0.25),
+    rgba(0, 232, 232, 0.25)
+  );
+  border-color: transparent;
+  box-shadow: 
+    0 4px 12px rgba(0, 168, 232, 0.2),
+    inset 0 0 0 1px rgba(0, 168, 232, 0.3);
+}
+
+.language-btn.es-active::after {
+  opacity: 0.5;
+}
+
+.language-btn.es-active:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 6px 16px rgba(0, 168, 232, 0.25),
+    inset 0 0 0 1px rgba(0, 168, 232, 0.4);
+}
+
+.current-lang,
+.alternate-lang {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.current-lang {
+  color: var(--accent-blue-light);
+}
+
+.alternate-lang {
+  opacity: 0.7;
+}
+
+.lang-separator {
+  opacity: 0.4;
+  color: var(--accent-blue);
+  font-weight: 300;
+  margin: 0 -0.1rem;
+}
+
+/* Hide Google Translate widget */
+.goog-te-banner-frame,
+.goog-te-gadget,
+.goog-te-gadget .goog-te-combo {
+  display: none !important;
+}
+
+/* Responsive adjustments for language switcher */
+@media (max-width: 1024px) {
+  .language-switcher {
+    margin-right: 1.25rem;
+  }
+  
+  .language-btn {
+    padding: 0.45rem 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    position: fixed;
+    top: 1rem;
+    right: 4rem; /* Space for menu button */
+    margin: 0;
+    z-index: 1001;
+  }
+
+  .language-btn {
+    height: 34px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    background: rgba(0, 168, 232, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Mobile menu open state */
+  body.menu-open .language-btn {
+    background: rgba(0, 168, 232, 0.15);
+    border-color: rgba(0, 168, 232, 0.4);
+  }
+}
+
+/* Dark mode optimization */
+@media (prefers-color-scheme: dark) {
+  .language-btn {
+    background: rgba(0, 168, 232, 0.12);
+    border-color: rgba(0, 168, 232, 0.25);
+  }
+  
+  .language-btn:hover {
+    box-shadow: 0 4px 12px rgba(0, 168, 232, 0.2);
+  }
+  
+  .language-btn.es-active {
+    background: linear-gradient(135deg,
+      rgba(0, 168, 232, 0.3),
+      rgba(0, 232, 232, 0.3)
+    );
+    box-shadow: 
+      0 4px 12px rgba(0, 168, 232, 0.25),
+      inset 0 0 0 1px rgba(0, 168, 232, 0.35);
+  }
+
+  .language-btn::before {
+    background: linear-gradient(135deg, 
+      rgba(0, 168, 232, 0.25),
+      rgba(0, 232, 232, 0.25)
+    );
+  }
+}

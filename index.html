@@ -118,10 +118,17 @@
           <img src="images/tartarus-logo.png" alt="Tartarus Dynamics Logo" class="nav-logo" />
         </a>
         <!-- Mobile Navigation Toggle Button -->
-        <button id="menuToggle" class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
       </div>
       <!-- Main Navigation Menu -->
-      <nav id="siteNav" class="nav-right">
+      <nav id="siteNav" class="nav-right" aria-label="Main navigation">
+        <div class="language-switcher">
+          <button id="languageToggle" class="language-btn" aria-label="Toggle Language">
+            <span class="current-lang">EN</span>
+            <span class="lang-separator">/</span>
+            <span class="alternate-lang">ES</span>
+          </button>
+        </div>
         <ul>
           <li><a href="#about-us">About Us</a></li>
           <li><a href="#founders">Founders</a></li>
@@ -460,5 +467,31 @@
 
   <!-- JavaScript -->
   <script src="js/script.js"></script>
+  <div id="google_translate_element" style="display: none;"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'es',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+
+    document.getElementById('languageToggle').addEventListener('click', function() {
+      const frame = document.getElementsByClassName('goog-te-menu-frame')[0];
+      if (frame) {
+        frame.contentDocument.getElementsByClassName('goog-te-menu2-item')[0].click();
+      }
+      
+      // Toggle active state
+      this.classList.toggle('es-active');
+      
+      // Update button text
+      const currentLang = this.querySelector('.current-lang');
+      const alternateLang = this.querySelector('.alternate-lang');
+      [currentLang.textContent, alternateLang.textContent] = [alternateLang.textContent, currentLang.textContent];
+    });
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
