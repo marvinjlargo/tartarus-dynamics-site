@@ -123,17 +123,17 @@
       <!-- Main Navigation Menu -->
       <nav id="siteNav" class="nav-right" aria-label="Main navigation">
         <div class="language-switcher">
-          <button id="languageToggle" class="language-btn" aria-label="Toggle Language">
+          <button id="languageToggle" class="language-btn" aria-label="Switch to Spanish">
             <span class="current-lang">EN</span>
             <span class="lang-separator">/</span>
             <span class="alternate-lang">ES</span>
           </button>
         </div>
         <ul>
-          <li><a href="#about-us" data-translate>About Us</a></li>
-          <li><a href="#founders" data-translate>Founders</a></li>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#founders">Founders</a></li>
           <li><a href="#nutag">Ñutag</a></li>
-          <li><a href="#contact" data-translate>Contact</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -465,110 +465,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- Main JavaScript -->
   <script src="js/script.js"></script>
-  <div id="google_translate_element" style="display: none;"></div>
-  <script type="text/javascript">
-    // Check if we're on localhost
-    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-
-    if (isLocalhost) {
-      // Local development language toggle
-      document.getElementById('languageToggle').addEventListener('click', function() {
-        const currentLang = this.querySelector('.current-lang');
-        const alternateLang = this.querySelector('.alternate-lang');
-        
-        // Toggle button state
-        this.classList.toggle('es-active');
-        
-        // Swap languages
-        [currentLang.textContent, alternateLang.textContent] = 
-          [alternateLang.textContent, currentLang.textContent];
-        
-        // Demo translation of key elements
-        const elements = document.querySelectorAll('[data-translate]');
-        elements.forEach(el => {
-          const translations = {
-            'Learn More': 'Más Información',
-            'About Us': 'Sobre Nosotros',
-            'Founders': 'Fundadores',
-            'Contact': 'Contacto',
-            // Add more translations as needed
-          };
-          if (currentLang.textContent === 'ES') {
-            el.textContent = translations[el.textContent] || el.textContent;
-          } else {
-            const original = Object.keys(translations).find(key => translations[key] === el.textContent);
-            if (original) el.textContent = original;
-          }
-        });
-      });
-    } else {
-      // Production Google Translate implementation
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: 'es',
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false
-        }, 'google_translate_element');
-      }
-
-      // Wait for Google Translate to load
-      let translateObserver = null;
-      function waitForGoogleTranslate() {
-        if (translateObserver) translateObserver.disconnect();
-        
-        translateObserver = new MutationObserver(function(mutations) {
-          if (document.getElementsByClassName('goog-te-menu-frame')[0]) {
-            initializeLanguageToggle();
-            translateObserver.disconnect();
-          }
-        });
-
-        translateObserver.observe(document.body, {
-          childList: true,
-          subtree: true
-        });
-      }
-
-      function initializeLanguageToggle() {
-        const languageToggle = document.getElementById('languageToggle');
-        if (!languageToggle) return;
-
-        languageToggle.addEventListener('click', function() {
-          // Find Google Translate dropdown
-          const frame = document.getElementsByClassName('goog-te-menu-frame')[0];
-          if (!frame) return;
-
-          // Get the document inside the frame
-          const frameDoc = frame.contentDocument || frame.contentWindow.document;
-          
-          // Find and click the Spanish option
-          const items = frameDoc.getElementsByClassName('goog-te-menu2-item');
-          for (let item of items) {
-            if (item.textContent.includes('Spanish')) {
-              item.click();
-              // Toggle button state
-              this.classList.toggle('es-active');
-              
-              // Update button text
-              const currentLang = this.querySelector('.current-lang');
-              const alternateLang = this.querySelector('.alternate-lang');
-              [currentLang.textContent, alternateLang.textContent] = 
-                [alternateLang.textContent, currentLang.textContent];
-              
-              break;
-            }
-          }
-        });
-      }
-
-      // Start observing after Google Translate script loads
-      document.querySelector('script[src*="translate.google.com"]')
-        .addEventListener('load', waitForGoogleTranslate);
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 </body>
 </html>
