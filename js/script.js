@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeTabNavigation();
   initializeSmoothScroll();
   initializeFadeInAnimations();
+  initializeLanguageToggle();
+  addAriaLabels();
 });
 
 /**
@@ -168,5 +170,147 @@ function addAriaLabels() {
   document.querySelectorAll('.tab-btn').forEach(tab => {
     tab.setAttribute('role', 'tab');
     tab.setAttribute('aria-selected', tab.classList.contains('active'));
+  });
+}
+
+/**
+ * Language Switching
+ * Handles switching between English and Spanish versions of the site
+ * with smooth transitions and visual feedback
+ */
+function initializeLanguageToggle() {
+  const languageToggle = document.getElementById('languageToggle');
+  const mainContent = document.querySelector('body');
+  
+  if (!languageToggle || !mainContent) return;
+
+  // Add transition overlay to the body if it doesn't exist
+  let transitionOverlay = document.getElementById('languageTransitionOverlay');
+  if (!transitionOverlay) {
+    transitionOverlay = document.createElement('div');
+    transitionOverlay.id = 'languageTransitionOverlay';
+    document.body.appendChild(transitionOverlay);
+  }
+
+  languageToggle.addEventListener('click', async (e) => {
+    e.preventDefault();
+    
+    // Prevent double-clicks
+    if (languageToggle.classList.contains('switching')) return;
+    
+    // Get current state
+    const currentScroll = window.scrollY;
+    const currentHash = window.location.hash;
+    const currentPath = window.location.pathname;
+    const isSpanish = currentPath.includes('index-es.html');
+    
+    // Store current state
+    sessionStorage.setItem('scrollPosition', currentScroll);
+    if (currentHash) {
+      sessionStorage.setItem('activeSection', currentHash);
+    }
+
+    // Store active founder
+    const activeFounder = document.querySelector('.tab-btn.active');
+    if (activeFounder) {
+      sessionStorage.setItem('activeFounder', activeFounder.getAttribute('data-founder'));
+    }
+    
+    // Prepare target URL
+    let targetUrl;
+    if (isSpanish) {
+      targetUrl = currentPath.replace('index-es.html', 'index.html');
+    } else {
+      targetUrl = currentPath.replace('index.html', 'index-es.html');
+    }
+    
+    if (currentPath === '/' || currentPath === '') {
+      targetUrl = isSpanish ? 'index.html' : 'index-es.html';
+    }
+
+    if (currentHash) {
+      targetUrl += currentHash;
+    }
+
+    // Start button animation
+    languageToggle.classList.add('switching');
+    
+    // Trigger a subtle scale effect on the page
+    mainContent.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+    mainContent.style.transform = 'scale(0.98)';
+    
+    // Start overlay transition
+    transitionOverlay.style.display = 'block';
+    await new Promise(resolve => requestAnimationFrame(resolve));
+    transitionOverlay.classList.add('active');
+    
+    // Wait for animations
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    // Navigate to new page
+    window.location.href = targetUrl;
+  });
+
+  // Handle page load transitions
+  window.addEventListener('load', async () => {
+    const savedScroll = sessionStorage.getItem('scrollPosition');
+    const savedSection = sessionStorage.getItem('activeSection');
+    const savedFounder = sessionStorage.getItem('activeFounder');
+    
+    // Start with overlay and scale effect if coming from language switch
+    if (savedScroll || savedSection || savedFounder) {
+      transitionOverlay.style.display = 'block';
+      transitionOverlay.classList.add('active');
+      mainContent.style.transform = 'scale(0.98)';
+    }
+
+    // Restore active founder
+    if (savedFounder) {
+      const founderBtn = document.querySelector(`.tab-btn[data-founder="${savedFounder}"]`);
+      const founderContent = document.getElementById(savedFounder);
+      
+      if (founderBtn && founderContent) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+        
+        founderBtn.classList.add('active');
+        founderContent.classList.add('active');
+      }
+    }
+    
+    // Restore scroll position
+    if (savedSection) {
+      const targetElement = document.querySelector(savedSection);
+      if (targetElement) {
+        const headerHeight = document.querySelector('.sticky-header')?.offsetHeight || 0;
+        const targetPosition = targetElement.offsetTop - headerHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'instant'
+        });
+      }
+    } else if (savedScroll) {
+      window.scrollTo({
+        top: parseInt(savedScroll),
+        behavior: 'instant'
+      });
+    }
+
+    // Smooth transition out
+    await new Promise(resolve => setTimeout(resolve, 100));
+    
+    // Reset scale with animation
+    mainContent.style.transform = 'scale(1)';
+    transitionOverlay.classList.remove('active');
+    
+    // Final cleanup after animations
+    await new Promise(resolve => setTimeout(resolve, 500));
+    transitionOverlay.style.display = 'none';
+    mainContent.style.transition = '';
+    
+    // Clear storage
+    sessionStorage.removeItem('scrollPosition');
+    sessionStorage.removeItem('activeSection');
+    sessionStorage.removeItem('activeFounder');
   });
 }

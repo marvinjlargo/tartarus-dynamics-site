@@ -1,0 +1,403 @@
+<!-- 
+  Tartarus Dynamics Website - Spanish Version
+  Author: Tartarus Dynamics Team
+  Description: Página principal que presenta el sistema Ñutag de etiquetas inteligentes para ganado
+  Version: 1.0.0
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Character encoding and viewport settings -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta tags -->
+  <meta name="description" content="Tartarus Dynamics - Revolucionando la gestión ganadera con etiquetas inteligentes Ñutag. Liderado por los fundadores Reece Meakings, Marvin Largo y Rubén Alvarenga." />
+  <meta name="keywords" content="Tartarus Dynamics, Ñutag, etiquetas inteligentes para ganado, IoT agricultura, gestión ganadera, agrotecnología" />
+  <meta name="author" content="Tartarus Dynamics" />
+  
+  <!-- Open Graph tags for social media sharing -->
+  <meta property="og:title" content="Tartarus Dynamics - Gestión Ganadera Inteligente" />
+  <meta property="og:description" content="Revolucionando la gestión ganadera con etiquetas inteligentes Ñutag. Descubre nuestra solución innovadora para la agricultura moderna." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tartarusdynamics.com/es" />
+  <meta property="og:image" content="https://tartarusdynamics.com/images/tartarus-logo.png" />
+  
+  <title>Tartarus Dynamics - Gestión Ganadera Inteligente | Ñutag</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png?v=2" type="image/png" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- JSON-LD Structured Data for SEO and Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tartarus Dynamics",
+    "url": "https://www.tartarusdynamics.com",
+    "logo": "https://www.tartarusdynamics.com/images/tartarus-logo.png",
+    "description": "Tartarus Dynamics se especializa en tecnología agrícola innovadora con su producto estrella, Ñutag – un sistema de etiquetas inteligentes para ganado."
+  }
+  </script>
+</head>
+<body>
+  <!-- Sticky Navigation Header -->
+  <header class="sticky-header">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="#" class="logo-link">
+          <img src="images/tartarus-logo.png" alt="Logo de Tartarus Dynamics" class="nav-logo" />
+        </a>
+        <button id="menuToggle" class="menu-toggle" aria-label="Alternar Navegación" aria-expanded="false">☰</button>
+      </div>
+      <nav id="siteNav" class="nav-right" aria-label="Navegación principal">
+        <div class="language-switcher">
+          <button id="languageToggle" class="language-btn" aria-label="Cambiar Idioma">
+            <span class="current-lang">ES</span>
+            <span class="lang-separator">/</span>
+            <span class="alternate-lang">EN</span>
+          </button>
+        </div>
+        <ul>
+          <li><a href="#about-us">Sobre Nosotros</a></li>
+          <li><a href="#founders">Fundadores</a></li>
+          <li><a href="#nutag">Ñutag</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img 
+        src="images/tartarus-logo.png" 
+        alt="Logo de Tartarus Dynamics" 
+        class="hero-logo"
+      />
+      <h2 class="hero-title">Revoluciona tu Gestión Ganadera</h2>
+      <p class="hero-subtitle">
+        Descubre <strong>Ñutag</strong> – un sistema inteligente y confiable de etiquetas 
+        diseñado para maximizar la eficiencia y garantizar el bienestar animal.
+      </p>
+      <a href="#nutag" id="learnMoreBtn" class="hero-cta">Más Información</a>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about-us" class="about fade-in">
+    <h2>Sobre Tartarus Dynamics</h2>
+    <p>
+      Tartarus Dynamics LLC es una asociación visionaria fundada por 
+      <strong>Rubén Alvarenga</strong>, <strong>Marvin Largo</strong> y <strong>Reece Meakings</strong>. 
+      Creamos soluciones tecnológicas agrícolas de vanguardia que impulsan la eficiencia 
+      y transforman el sector agrícola.
+    </p>
+    <p>
+      Nuestra misión es empoderar a agricultores y ganaderos con herramientas modernas, 
+      confiables y fáciles de usar para una gestión ganadera superior.
+    </p>
+  </section>
+
+  <!-- Founders Section -->
+  <section id="founders" class="founders fade-in">
+    <h2>Conoce a Nuestros Fundadores</h2>
+    <div class="tabs-container">
+      <div class="tabs">
+        <button class="tab-btn active" data-founder="reece">Reece Meakings</button>
+        <button class="tab-btn" data-founder="marvin">Marvin Largo</button>
+        <button class="tab-btn" data-founder="ruben">Rubén Alvarenga</button>
+      </div>
+
+      <!-- Reece's Profile Tab -->
+      <div class="tab-content active" id="reece">
+        <div class="founder-card">
+          <div class="founder-image">
+            <img 
+              src="images/reece-meakings.jpg" 
+              alt="Reece Meakings - CTO y Cofundador de Tartarus Dynamics"
+              loading="lazy"
+            />
+          </div>
+          <div class="founder-info">
+            <h3>Reece Meakings</h3>
+            <h4>CTO y Cofundador</h4>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/reece-meakings-ai/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                Conectar en LinkedIn
+              </a>
+            </div>
+            <div class="expertise">
+              <h5>Liderazgo Técnico</h5>
+              <ul>
+                <li>Arquitectura y Estrategia DevOps</li>
+                <li>Gestión de Infraestructura en la Nube</li>
+                <li>Integración de Sistemas y Seguridad</li>
+                <li>Implementación de IA/ML</li>
+              </ul>
+            </div>
+            <div class="contribution">
+              <h5>Innovación e Impacto</h5>
+              <p>
+                Como CTO, Reece aporta una amplia experiencia en liderazgo DevOps a Tartarus Dynamics, 
+                habiendo dirigido equipos de más de 15 desarrolladores y logrado mejoras notables en 
+                eficiencia en los sectores de salud y energía. Su historial comprobado incluye la 
+                reducción de tiempos de implementación de horas a minutos y la implementación de 
+                soluciones robustas de infraestructura en la nube.
+              </p>
+            </div>
+            <div class="background">
+              <h5>Excelencia Técnica</h5>
+              <ul>
+                <li>Gestión avanzada de infraestructura en la nube en AWS, Azure y Google Cloud</li>
+                <li>Experto en pipelines CI/CD e Infraestructura como Código (Terraform, CDK)</li>
+                <li>Co-creador de software impulsado por IA con más de 25,000 usuarios activos</li>
+                <li>Graduado con honores en Ingeniería de Redes y Análisis de Seguridad</li>
+              </ul>
+            </div>
+            <div class="leadership">
+              <h5>Visión y Experiencia</h5>
+              <p>
+                Combinando profundo conocimiento técnico con liderazgo estratégico, Reece arquitecta 
+                la infraestructura tecnológica de Tartarus Dynamics. Su experiencia en cumplimiento 
+                normativo en salud y sistemas críticos asegura que nuestras soluciones agrícolas 
+                cumplan con los más altos estándares de confiabilidad y seguridad. Su enfoque 
+                innovador en la integración de IA y optimización de sistemas impulsa nuestro 
+                compromiso con la tecnología agrícola de vanguardia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marvin's Profile Tab -->
+      <div class="tab-content" id="marvin">
+        <div class="founder-card">
+          <div class="founder-image">
+            <img 
+              src="images/marvin-largo.jpg" 
+              alt="Marvin J. Largo - COO y Cofundador de Tartarus Dynamics"
+              loading="lazy"
+            />
+          </div>
+          <div class="founder-info">
+            <h3>Marvin J. Largo</h3>
+            <h4>COO y Cofundador</h4>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/marvinjlargo/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                Conectar en LinkedIn
+              </a>
+            </div>
+            <div class="expertise">
+              <h5>Liderazgo Técnico</h5>
+              <ul>
+                <li>Dirección de obras y gestión de proyectos</li>
+                <li>Optimización de la cadena de suministro</li>
+                <li>Diseño de ingeniería y estimaciones de costos y presupuestos</li>
+                <li>Sistemas de control de calidad</li>
+              </ul>
+            </div>
+            <div class="contribution">
+              <h5>Innovación e Impacto</h5>
+              <p>
+                Como COO, Marvin aplica su amplia experiencia en ingeniería civil para impulsar la 
+                excelencia operativa en Tartarus Dynamics. Su historial comprobado incluye la gestión 
+                de proyectos con un valor superior a los 50 millones de dólares y la coordinación de 
+                logística compleja para más de 1,000,000 de pies cuadrados de materiales de construcción. 
+                Esta experiencia en planificación precisa y control de calidad garantiza el desarrollo 
+                sólido de nuestras soluciones tecnológicas para la agricultura.
+              </p>
+            </div>
+            <div class="background">
+              <h5>Excelencia Profesional</h5>
+              <ul>
+                <li>Título en Ingeniería Civil con enfoque en construcción y gestión de proyectos</li>
+                <li>Certificación en Gestión de Proyectos por Google</li>
+                <li>Certificado de Posgrado en Gestión de Cadenas de Suministro</li>
+                <li>Experto en AutoCAD, SAP y herramientas avanzadas de estimación de proyectos</li>
+              </ul>
+            </div>
+            <div class="leadership">
+              <h5>Liderazgo y Visión Estratégica</h5>
+              <p>
+                Conjugando precisión técnica y visión empresarial, Marvin aporta una perspectiva 
+                internacional enriquecida por su dominio de tres idiomas (español, inglés y francés). 
+                Su profunda comprensión de estándares internacionales de calidad y marcos regulatorios 
+                fortalece nuestro compromiso con la excelencia operativa. Esta singular combinación 
+                de expertise técnico y visión estratégica impulsa nuestra misión de desarrollar 
+                soluciones agropecuarias innovadoras, escalables y de clase mundial.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rubén's Profile Tab -->
+      <div class="tab-content" id="ruben">
+        <div class="founder-card">
+          <div class="founder-image">
+            <img 
+              src="images/ruben-alvarenga.jpg" 
+              alt="Rubén Alvarenga - CEO y Cofundador de Tartarus Dynamics"
+              loading="lazy"
+            />
+          </div>
+          <div class="founder-info">
+            <h3>Rubén Alvarenga</h3>
+            <h4>CEO y Cofundador</h4>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/rubalva/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                Conectar en LinkedIn
+              </a>
+            </div>
+            <div class="expertise">
+              <h5>Experiencia</h5>
+              <ul>
+                <li>Ingeniería Aeroespacial e Innovación Técnica</li>
+                <li>Desarrollo de Negocios Internacionales</li>
+                <li>Programación y Arquitectura de Sistemas</li>
+                <li>Comunicación Intercultural</li>
+              </ul>
+            </div>
+            <div class="contribution">
+              <h5>Contribución</h5>
+              <p>
+                Como CEO, Rubén combina su formación en ingeniería aeroespacial con visión 
+                empresarial para impulsar la visión estratégica de Tartarus Dynamics. Su experiencia 
+                en sistemas complejos y mercados internacionales lo posiciona de manera única para 
+                liderar nuestra expansión en diversos sectores agrícolas.
+              </p>
+            </div>
+            <div class="background">
+              <h5>Excelencia Técnica</h5>
+              <ul>
+                <li>Ingeniero Aeroespacial, Universidad Nacional Cheng Kung (Taiwán)</li>
+                <li>Primer Lugar, Desafío de Programación Kibo (Taiwán)</li>
+                <li>Tercer Lugar Mundial y Segundo Lugar en competencias posteriores de programación</li>
+                <li>Dominio avanzado de lenguajes de programación Python, C++ y C</li>
+              </ul>
+            </div>
+            <div class="leadership">
+              <h5>Liderazgo y Perspectiva Global</h5>
+              <p>
+                Un innovador nato que fundó un club de astronomía y apoya activamente a veteranos 
+                de guerra, Rubén aporta una perspectiva global única a través de sus capacidades 
+                multilingües (español, portugués, guaraní, inglés y chino) y experiencia internacional. 
+                Su combinación de experiencia técnica y comprensión intercultural impulsa nuestra 
+                misión de revolucionar la gestión ganadera a nivel mundial.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ñutag Product Section -->
+  <section id="nutag" class="product fade-in">
+    <h2>Ñutag: Etiqueta Inteligente para Ganado</h2>
+    <p class="product-tagline">
+      Sistema de etiquetas de nueva generación diseñado para revolucionar la gestión ganadera
+    </p>
+
+    <div class="nutag-content">
+      <div class="nutag-features">
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-icon">📍</div>
+            <h4>Localización Precisa</h4>
+            <p>Seguimiento en tiempo real mediante antenas estratégicamente ubicadas</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">🔔</div>
+            <h4>Alertas Sonoras</h4>
+            <p>Notificaciones instantáneas cuando una etiqueta se extravía</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">🛰️</div>
+            <h4>Preparado para GPS</h4>
+            <p>Capacidad integrada para seguimiento basado en GPS</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">🔋</div>
+            <h4>Batería de Un Año</h4>
+            <p>Energía sostenible mediante células solares miniatura integradas</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">🔍</div>
+            <h4>Identificación Rápida</h4>
+            <p>Escaneo instantáneo en instalaciones de manejo para una gestión eficiente</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">💻</div>
+            <h4>Suite Completa de Software</h4>
+            <p>Herramientas integrales de gestión:</p>
+            <ul class="feature-list">
+              <li>Aplicación de escritorio potente sin conexión</li>
+              <li>Plataforma web sincronizada en la nube</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="nutag-cta">
+          <a href="#contact" class="cta-button">Solicitar una Demo</a>
+        </div>
+      </div>
+
+      <div class="nutag-images">
+        <div class="image-container">
+          <img 
+            src="images/cattle-tag1.jpg" 
+            alt="Ganado con etiqueta inteligente"
+            loading="lazy"
+          />
+        </div>
+        <div class="image-container">
+          <img 
+            src="images/cattle-walking.jpg" 
+            alt="Ganado en movimiento con etiqueta"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact fade-in">
+    <h2>Contáctanos</h2>
+    <p>
+      ¿Interesado en descubrir cómo Ñutag puede transformar tus operaciones? 
+      Escríbenos a: <strong>info@tartarusdynamics.com</strong>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#privacy" class="footer-link">Política de Privacidad</a>
+        <span class="footer-separator">|</span>
+        <a href="#terms" class="footer-link">Términos de Servicio</a>
+        <span class="footer-separator">|</span>
+        <a href="#contact" class="footer-link">Contacto</a>
+      </div>
+      <p class="copyright">&copy; 2025 Tartarus Dynamics. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html> 
