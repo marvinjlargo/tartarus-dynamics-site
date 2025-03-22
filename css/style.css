@@ -374,7 +374,11 @@ section h2 {
   display: block;
 }
 
+/* Founder Card Layout */
 .founder-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
   background: #222;
   border-radius: 10px;
   padding: 2rem;
@@ -385,26 +389,35 @@ section h2 {
   overflow: hidden;
 }
 
-.founder-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-blue-light));
-  transform: scaleX(0);
-  transform-origin: left;
+.founder-image {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.founder-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   transition: transform var(--transition-speed);
 }
 
-.founder-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+/* Specific adjustment for Rubén's image */
+#ruben .founder-image img {
+  object-position: center 35%;  /* Adjust the vertical position to better frame his face */
 }
 
-.founder-card:hover::before {
-  transform: scaleX(1);
+.founder-card:hover .founder-image img {
+  transform: scale(1.05);
+}
+
+.founder-info {
+  min-width: 0;
 }
 
 .founder-info h3 {
@@ -491,51 +504,39 @@ section h2 {
   margin-bottom: 1.5rem;
 }
 
+/* Tablet Responsive Adjustments */
+@media (max-width: 1024px) {
+  .founder-card {
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
-  .tabs {
-    flex-direction: column;
-    gap: 0.5rem;
+  .founder-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
-  .tab-btn {
-    width: 100%;
+  .founder-image {
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .founder-info {
     text-align: center;
   }
 
-  .founder-card {
-    padding: 1.5rem;
-  }
-
-  .founder-info h3 {
-    font-size: 1.5rem;
-  }
-
-  .founder-info h4 {
-    font-size: 1.1rem;
-  }
-
-  .founder-info h5 {
-    font-size: 1rem;
-    margin: 1.25rem 0 0.5rem;
-  }
-
-  .founder-info ul li {
-    font-size: 0.95rem;
-  }
-
-  .founder-info p {
-    font-size: 0.95rem;
+  .founder-info ul {
+    display: inline-block;
+    text-align: left;
   }
 
   .social-links {
-    text-align: center;
-  }
-  
-  .linkedin-link {
-    width: 100%;
-    max-width: 200px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 }
 
