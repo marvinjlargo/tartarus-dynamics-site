@@ -1,33 +1,45 @@
 # Tartarus Dynamics Website
 
-A modern, responsive website for Tartarus Dynamics, showcasing the innovative Ñutag smart livestock ear tag system. Built with HTML5, CSS3, and vanilla JavaScript for optimal performance and accessibility.
+A modern, bilingual, responsive website for Tartarus Dynamics, showcasing the innovative Ñutag smart livestock ear tag system. Built with HTML5, CSS3, and vanilla JavaScript for optimal performance and accessibility.
 
 ## Features
+
+### 🌐 Bilingual Support
+- Complete English and Spanish versions
+- Seamless language switching with smooth transitions
+- Maintained content structure across languages
+- Localized meta tags and SEO optimization
+- Language-specific social sharing metadata
 
 ### 🎨 Modern Design
 - Responsive layout that works seamlessly across desktop, tablet, and mobile devices
 - Custom CSS variables for consistent theming
 - Smooth animations and transitions
-- Optimized typography using Google Fonts (Poppins and Roboto)
+- Optimized typography using system fonts for better performance
 - Modern gradient effects and subtle patterns
 
 ### 📱 Key Sections
 1. **Hero Section**
    - Animated entrance with gradient background
-   - Clear value proposition
-   - Call-to-action button
+   - Clear value proposition in both languages
+   - Language-aware call-to-action buttons
    - Responsive logo display
 
 2. **About Us**
    - Company overview
    - Mission statement
    - Fade-in animations
+   - Bilingual content management
 
-3. **Founders Section**
-   - Interactive tabs for each founder
+3. **Leadership Team Section**
+   - Interactive tabs for each team member
    - Detailed profiles with LinkedIn integration
    - Responsive cards with hover effects
    - Professional background and expertise details
+   - Team structure:
+     - Reece Meakings - Technology & Innovation Lead
+     - Marvin Largo - Operations & Product Lead
+     - Rubén Alvarenga - Business & Engineering Lead
 
 4. **Ñutag Product Section**
    - Feature grid with icons
@@ -35,10 +47,12 @@ A modern, responsive website for Tartarus Dynamics, showcasing the innovative Ñ
    - High-quality product images
    - Key benefits and specifications
    - Demo request button
+   - Localized product descriptions
 
 5. **Contact Section**
    - Direct email contact
    - Clean, minimal design
+   - Language-specific contact information
 
 ### 🚀 Technical Features
 - Mobile-first responsive design
@@ -49,20 +63,25 @@ A modern, responsive website for Tartarus Dynamics, showcasing the innovative Ñ
 - JSON-LD structured data for SEO
 - Accessibility features (ARIA labels, keyboard navigation)
 - Reduced motion support
+- Language switching without page reload
+- Session state preservation during language changes
 
 ### 🔍 SEO Optimization
-- Meta tags for social sharing
+- Bilingual meta tags for social sharing
 - Structured data implementation
 - Semantic HTML5 elements
 - Optimized content structure
 - Mobile-friendly design
+- Language-specific URLs and metadata
+- Hreflang tags for language alternatives
 
 ## Technical Details
 
 ### 📁 File Structure
 ```
 tartarus-dynamics-site/
-├── index.html
+├── index.html          # English version
+├── index-es.html       # Spanish version
 ├── css/
 │   └── style.css
 ├── js/
@@ -70,7 +89,10 @@ tartarus-dynamics-site/
 ├── images/
 │   ├── tartarus-logo.png
 │   ├── cattle-tag1.jpg
-│   └── cattle-walking.jpg
+│   ├── cattle-walking.jpg
+│   ├── reece-meakings.jpg
+│   ├── marvin-largo.jpg
+│   └── ruben-alvarenga.jpg
 └── README.md
 ```
 
@@ -82,6 +104,7 @@ tartarus-dynamics-site/
   - Shadows
   - Border radius
   - Transitions
+  - Language-specific adjustments
 
 ### 📱 Responsive Breakpoints
 - Mobile: < 768px
@@ -95,12 +118,15 @@ tartarus-dynamics-site/
 git clone https://github.com/yourusername/tartarus-dynamics-site.git
 ```
 
-2. Open `index.html` in your browser to view the site
+2. Open `index.html` in your browser to view the English version
+   Open `index-es.html` to view the Spanish version
 
 3. For development:
    - Use a local server (e.g., Live Server for VS Code)
    - Make sure all image assets are in the correct directory
    - Test across different devices and browsers
+   - Test language switching functionality
+   - Verify content consistency across languages
 
 ## Browser Support
 - Chrome (latest)
@@ -115,14 +141,18 @@ git clone https://github.com/yourusername/tartarus-dynamics-site.git
 - Lazy loading for images
 - Efficient animations
 - Reduced motion support
+- Smooth language transitions
+- Session state preservation
 
 ## Accessibility
-- ARIA labels
+- ARIA labels in both languages
 - Semantic HTML
 - Keyboard navigation
 - Screen reader friendly
 - Color contrast compliance
 - Focus states
+- Language attributes
+- Accessible language switching
 
 ## Contributing
 1. Fork the repository
