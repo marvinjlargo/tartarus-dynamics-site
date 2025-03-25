@@ -172,7 +172,6 @@ function addAriaLabels() {
     tab.setAttribute('aria-selected', tab.classList.contains('active'));
   });
 }
-
 /**
  * Language Switching
  * Handles switching between English and Spanish versions of the site
@@ -314,3 +313,4 @@ function initializeLanguageToggle() {
     sessionStorage.removeItem('activeFounder');
   });
 }
+
