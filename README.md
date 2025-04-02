@@ -39,7 +39,6 @@ A modern, bilingual, responsive website for Tartarus Dynamics, showcasing the in
    - Team structure:
      - Reece Meakings - Technology & Innovation Lead
      - Marvin Largo - Operations & Product Lead
-     - Rubén Alvarenga - Business & Engineering Lead
 
 4. **Ñutag Product Section**
    - Feature grid with icons
@@ -91,8 +90,7 @@ tartarus-dynamics-site/
 │   ├── cattle-tag1.jpg
 │   ├── cattle-walking.jpg
 │   ├── reece-meakings.jpg
-│   ├── marvin-largo.jpg
-│   └── ruben-alvarenga.jpg
+│   └── marvin-largo.jpg
 └── README.md
 ```
 
